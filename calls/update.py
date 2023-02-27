@@ -10,13 +10,14 @@ data = {
 }
 auth_response = requests.post(auth_endpoint, data=data)
 
+query = input('Update Account details of ==> ')
 
 if auth_response.status_code == 200:
     token = auth_response.json()['access']
     header = {
         'Authorization':f'Bearer {token}'
     }
-    changes = {'account' : 'shawn@test.com',}
+    changes = {'account' : query,}
     while True:
         change = input('specify field of change (else => N): ')
         if change == 'N':
