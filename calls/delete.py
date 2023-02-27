@@ -11,6 +11,7 @@ data = {
 }
 auth_response = requests.post(auth_endpoint, data=data)
 
+query = input('Delete Account of ==> ')
 
 if auth_response.status_code == 200:
     token = auth_response.json()['access']
@@ -18,7 +19,7 @@ if auth_response.status_code == 200:
         'Authorization':f'Bearer {token}'
     }
     data = {
-        'email' : email,
+        'email' : query,
     }
     endpoint = 'http://127.0.0.1:8000/user/delete/'
     response = requests.delete(endpoint,headers=header, data=data)
