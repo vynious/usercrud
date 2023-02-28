@@ -3,7 +3,7 @@ CRUD operations of Custom User Models
 
 python commands of API calls are under "calls" 
 
-API CALLS:
+## API CALLS:
 
 list.py => prompts users to login, if not "ADMIN", action will be not allowed. if "ADMIN" returns with all users in the database
 
@@ -17,5 +17,7 @@ delete.py => prompts login, "ADMIN" can delete any accounts, other users can onl
 
 
 
+## DATABASE:
 
+details of users regardless of user_roles are stored on locally on MySQL, can be modified under DATABASES in settings.py of usercrud file.
 
