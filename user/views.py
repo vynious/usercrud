@@ -59,6 +59,8 @@ def update(request, *args, **kwargs):
     if "user_role" in input:
         if input["user_role"] == "ADMIN": # give permission of superuser
             item.is_superuser = True
+        else:
+            item.is_superuser = False
 
     if serializer.is_valid(raise_exception=True):
         serializer.save()
