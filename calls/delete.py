@@ -14,6 +14,7 @@ auth_response = requests.post(auth_endpoint, data=data)
 
 
 if auth_response.status_code == 200:
+    print(f"Your tokens are {auth_response.json()}")
     query = input('Delete Account of ==> ')
     token = auth_response.json()['access']
     header = {
@@ -25,3 +26,5 @@ if auth_response.status_code == 200:
     endpoint = 'http://127.0.0.1:8000/user/delete/'
     response = requests.delete(endpoint,headers=header, data=data)
     print(response.json())
+else:
+    print('Error with Authentication')

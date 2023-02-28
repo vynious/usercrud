@@ -19,6 +19,7 @@ auth_response = requests.post(auth_endpoint, data=data)
 # API Call to fetch the target account 
 
 if auth_response.status_code == 200:
+    print(f"Your tokens are {auth_response.json()}")
     query = input('Account details of ==> ')
     token = auth_response.json()['access']
     header = {
@@ -31,4 +32,4 @@ if auth_response.status_code == 200:
     response = requests.get(endpoint,headers=header, data=data)
     print(response.json())
 else:
-    print('Try again, something went wrong...')
+    print('Try again, something went wrong with Authentication...')
