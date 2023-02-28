@@ -19,7 +19,7 @@ delete.py => prompts login, "ADMIN" can delete any accounts, other users can onl
 
 ## DATABASE:
 
-details of users regardless of user_roles are stored on locally on MySQL, can be modified under DATABASES in settings.py of usercrud file.
+details of users regardless of user_roles are stored on locally on MySQL.
 
 Mock data
 
