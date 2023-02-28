@@ -14,11 +14,12 @@ auth_response = requests.post(auth_endpoint, data=data)
 
 # fetch account details 
 
-query = input('Account details of ==> ')
+
 
 # API Call to fetch the target account 
 
 if auth_response.status_code == 200:
+    query = input('Account details of ==> ')
     token = auth_response.json()['access']
     header = {
         'Authorization':f'Bearer {token}'

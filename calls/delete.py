@@ -11,9 +11,10 @@ data = {
 }
 auth_response = requests.post(auth_endpoint, data=data)
 
-query = input('Delete Account of ==> ')
+
 
 if auth_response.status_code == 200:
+    query = input('Delete Account of ==> ')
     token = auth_response.json()['access']
     header = {
         'Authorization':f'Bearer {token}'

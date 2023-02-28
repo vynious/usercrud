@@ -10,9 +10,10 @@ data = {
 }
 auth_response = requests.post(auth_endpoint, data=data)
 
-query = input('Update Account details of ==> ')
+
 
 if auth_response.status_code == 200:
+    query = input('Update Account details of ==> ')
     token = auth_response.json()['access']
     header = {
         'Authorization':f'Bearer {token}'
